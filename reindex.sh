@@ -1,9 +1,15 @@
-folder=src
-pattern='-name "*.entity.ts"-o -name "*.dto.ts"-o -name "*.guard.ts"-o -name "*.strategy.ts"-o -type f -wholename "**/common/*.ts"'
-read -p "Specify path to folder: " folder
-#todo specify pattern
+folderDefault=src
+patternDefault='-name "*.entity.ts"-o -name "*.dto.ts"-o -name "*.guard.ts"-o -name "*.strategy.ts"-o -type f -wholename "**/common/*.ts"'
 
-folder=$1 || $folder
+echo "Default folder: $folderDefault"
+read -p "Specify path to folder(optional): " folder
+
+echo "Default pattern: $patternDefault"
+read -p "Specify pattern(optional): " pattern
+
+folder=${folder:-$1 || $folderDefault}
+pattern=${pattern:-$2 || $patternDefault}
+
 
 for x in $(find $folder/**/** pattern 2>/dev/null)
 do
