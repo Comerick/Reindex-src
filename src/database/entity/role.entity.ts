@@ -1,10 +1,4 @@
-
-import {
-  Column,
-  Entity,
-  Index,
-  PrimaryGeneratedColumn
-} from 'typeorm';
+import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('role')
 export class RoleEntity {
@@ -13,7 +7,6 @@ export class RoleEntity {
     type: 'bigint',
   })
   id: string;
-
 
   @Index({ unique: true })
   @Column({
