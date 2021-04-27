@@ -9,4 +9,3 @@ reindex:
 
 setup:
 	npm install
-	npm install
